@@ -8,9 +8,11 @@ import Interfaces.DAO.SellerDAO;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) throws SQLException {
+        Scanner r = new Scanner(System.in);
 //        Department department = new Department(1, "Books");
 //        System.out.println(department);
 //
@@ -38,7 +40,7 @@ public class Principal {
         }
 
         System.out.println("<==> TESTE 4: Seller Insert <==>");
-        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
+        Seller newSeller = new Seller(null, "Bob, o Bobo", "bob@gmail.com", new Date(), 4000.0, department);
 
         sellerDAO.insert(newSeller);
         System.out.println("Inserted! New id = " + newSeller.getId());
@@ -48,5 +50,13 @@ public class Principal {
         seller1.setName("Bob, o Bobo");
         sellerDAO.update(seller1);
         System.out.println("Update complete: " + sellerDAO.findById(1));
+
+        System.out.println("<==> TESTE 6: Seller DeleteById <==>");
+        System.out.println("Digite o ID do usuário que será deletado: ");
+        int id = new Scanner(System.in).nextInt();
+        sellerDAO.deleteById(id);
+        System.out.println("Deleted!");
+
+        r.close();
     }
 }
