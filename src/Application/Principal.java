@@ -28,7 +28,12 @@ public class Principal {
         List<Seller> sellers = sellerDAO.findByDepartment(department);
         for (Seller obj : sellers) {
             System.out.println(obj);
+        }
 
+        System.out.println("<==> TESTE 3: Seller findAll <==>");
+        sellers= sellerDAO.findAll();
+        for (Seller obj : sellers) {
+            System.out.println(obj);
         }
     }
 }
