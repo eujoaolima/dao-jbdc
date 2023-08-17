@@ -42,5 +42,11 @@ public class Principal {
 
         sellerDAO.insert(newSeller);
         System.out.println("Inserted! New id = " + newSeller.getId());
+
+        System.out.println("<==> TESTE 5: Seller Update <==>");
+        seller1 = sellerDAO.findById(1);
+        seller1.setName("Bob, o Bobo");
+        sellerDAO.update(seller1);
+        System.out.println("Update complete: " + sellerDAO.findById(1));
     }
 }
