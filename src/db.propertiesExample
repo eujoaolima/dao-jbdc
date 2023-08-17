@@ -1,0 +1,4 @@
+user=root
+password= *** ENTER YOUR PASSWORD ***
+dburl=jdbc:mysql://localhost:3306/***NAME OF YOUR DATABASE***
+useSSL=false
